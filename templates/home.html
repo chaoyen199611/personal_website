@@ -1,1 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block personal-profile %}
+<div class="container">
+    <img class="img-profile" src="{% static 'image/profile_image.png' %}" alt="profile_image">
+</div>
+    
+{% endblock %}
