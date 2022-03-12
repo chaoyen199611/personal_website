@@ -7,5 +7,10 @@ body {
 }
 
 .img-profile {
-    width: 300px;
+    width: 280px;
+    height: 300px;
+    border-radius: 25px;
+    position: relative;
+    object-fit: cover;
+    top: 100px;
 }
