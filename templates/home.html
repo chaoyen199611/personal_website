@@ -1,32 +1,68 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block personal-profile %}
-<div class="container-md" style="text-align: center;">
+<div class="logo">
     <div class="image-container" >
-        <img class="img-profile" src="{% static 'image/personal_logo.png' %}" alt="profile_image">
+        <img class="img-profile" src="{% static 'image/mylogo.png' %}" alt="profile_image">
     </div>
     
 </div>
 <div class="about">
-    <div class="container">
-        <div class="title">
-            <h1>About</h1>
-        </div>
-        <div class="introduction-context">
-            <P>{{ intro.introduction }}</P>
-        </div>
+    <div class="container" >
+        <h1 class="title" >About</h1>
+        <div class="container-context">{{ intro.introduction }}</div>
     </div>
 </div>
 <div class="projects">
     <div class="container">
-        <div class="title">
-            <h1>Projects</h1>
-        </div>
-        <div class="introduction-context">
-            <P>{{ intro.introduction }}</P>
-        </div>
+        <h1 class="title">Projects</h1>
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!-- slide image -->
+                <div class="slide first">
+                    <img src="{% static 'image/mylogo.png' %}" alt="fist slide image">
+                </div>
+                <div class="slide second">
+                    <img src="{% static 'image/mylogo.png' %}" alt="second slide image">
+                </div>
+                <div class="slide third">
+                    <img src="{% static 'image/mylogo.png' %}" alt="third slide image">
+                </div>
+                <div class="slide fourth">
+                    <img src="{% static 'image/mylogo.png' %}" alt="fourth slide image">
+                </div>
+
+                <!-- automatic navigation -->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+            </div>
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+        </div>     
     </div>
 </div>
 
+<script type="text/javascript">
+    var counter = 1;
+    setInterval(function(){
+        document.getElementById('radio'+counter).checked=true;
+        counter++;
+        if(counter>4){
+            counter=1;
+        }        
+    }, 5000);
+</script>
     
 {% endblock %}
