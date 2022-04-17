@@ -1,11 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block personal-profile %}
-<div class="container-md">
-    <div class="image-container">
-        <img class="img-profile" src="{% static 'image/profile_image.png' %}" alt="profile_image">
+<div class="container-md" style="text-align: center;">
+    <div class="image-container" >
+        <img class="img-profile" src="{% static 'image/personal_logo.png' %}" alt="profile_image">
     </div>
     
 </div>
+<div class="about">
+    <div class="container">
+        <div class="title">
+            <h1>About</h1>
+        </div>
+        <div class="introduction-context">
+            <P>{{ intro.introduction }}</P>
+        </div>
+    </div>
+</div>
+<div class="projects">
+    <div class="container">
+        <div class="title">
+            <h1>Projects</h1>
+        </div>
+        <div class="introduction-context">
+            <P>{{ intro.introduction }}</P>
+        </div>
+    </div>
+</div>
+
     
 {% endblock %}
