@@ -7,7 +7,7 @@ from .models import Article, Profile
 
 class HomePageView(TemplateView):
 
-    template_name="home.html"
+    template_name="base.html"
 
     def get_context_data(self, *args,**kwargs):
         context=super().get_context_data(*args,**kwargs)
