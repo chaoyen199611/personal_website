@@ -12,8 +12,5 @@ class HomePageView(TemplateView):
     def get_context_data(self, *args,**kwargs):
         context=super().get_context_data(*args,**kwargs)
         context['intro']=Profile.objects.get(id=1)
+        context['articles']=Article.objects.all()[:5]
         return context
-
-
-def index(request):
-    return HttpResponse("Homepage")

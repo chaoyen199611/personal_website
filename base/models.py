@@ -1,12 +1,13 @@
-from email.policy import default
-from unicodedata import category
 from django.db import models
+from django.contrib import admin
 
 # Create your models here.
 
 class Tag(models.Model):
     icon=models.ImageField(default=' ',blank=True)
     tagname=models.CharField(max_length=50)
+    def __str__(self):
+        return self.tagname
 
 class Article(models.Model):
     P='P'
@@ -24,6 +25,8 @@ class Article(models.Model):
     content=models.TextField()
     tags=models.ManyToManyField(Tag)
     pub_date=models.DateTimeField('date published')
+    def __str__(self):
+        return self.title
 
 class Profile(models.Model):
     introduction=models.TextField()
